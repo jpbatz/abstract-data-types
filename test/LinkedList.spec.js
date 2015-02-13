@@ -73,11 +73,12 @@ describe('LinkedList', function () {
   });
 
   describe('remove()', function () {
-    var linkedList, node, nextNode;
+    var linkedList, node, nextNode, anotherNode;
     beforeEach(function() {
       linkedList = new LinkedList();
       node = new Node(11);
       nextNode = new Node(13);
+      anotherNode = new Node(15);
     });
 
     it('should have a `remove` method', function() {
@@ -91,13 +92,23 @@ describe('LinkedList', function () {
       expect(linkedList.head).to.equal(nextNode);
     });
 
-    it('removes the n-th Node object from the LinkedList', function() {
+    it('removes the n-th Node object from the end of the LinkedList', function() {
       linkedList.add(node);
       linkedList.add(nextNode);
       linkedList.remove(1);
       expect(linkedList.head).to.equal(node);
       expect(linkedList.head.getNext()).not.to.equal(nextNode);
     });
+
+    it('removes the n-th Node object from the middle of the LinkedList', function() {
+      linkedList.add(node);
+      linkedList.add(nextNode);
+      linkedList.add(anotherNode);
+      linkedList.remove(1);
+      expect(linkedList.head).to.equal(node);
+      expect(linkedList.head.getNext()).not.to.equal(nextNode);
+    });
+
   });
 
   describe('length', function () {
