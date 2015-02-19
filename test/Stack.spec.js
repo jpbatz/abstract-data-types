@@ -16,7 +16,7 @@ describe('Stack', function() {
     var stack;
     beforeEach(function() {
       stack = new Stack();
-    })
+    });
 
     it('has a push method', function() {
       expect(stack.push).to.be.a('function');
