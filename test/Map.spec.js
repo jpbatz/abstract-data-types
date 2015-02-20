@@ -98,6 +98,6 @@ describe('Map', function() {
       map.remove(key);
 
       expect(map.get(key)).to.equal(null);
-    })
+    });
   });
 });
