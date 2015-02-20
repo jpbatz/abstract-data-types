@@ -30,6 +30,7 @@ describe('Map', function() {
       var key = 123;
       var value = 'foobarbaz';
       map.set(key, value);
+
       expect(map.get(key)).to.equal(value);
     });
 
